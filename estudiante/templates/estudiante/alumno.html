@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}UNCP 2023-I{% endblock title %}
+
+{% block content %}
+<h1>alumno</h1>
+  {% if alumno.foto %}
+    <img src="{{ alumno.foto.url }}" alt="alumno" height="300" width="200">
+  {% endif %}
+  <p>{{ alumno.nombres }}, {{alumno.primer_apellido}}</p>
+
+{% endblock content %}

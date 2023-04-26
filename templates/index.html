@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}UNCP CARNET UNIVERSITARIO 2023{% endblock title %}
+
+{% block content %}
+  <div class="container d-flex min-vh-100 justify-content-center align-items-center">
+    <div class="row  mt-5">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title mb-4 text-center">CARNET UNIVERSITARIO 2023</h4>
+            <form action="" method="post">
+              {% csrf_token %}
+              {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-danger text-center" role="alert">
+                  <a href="#" class="alert-link ">{{message}}</a>
+                </div>
+                {% endfor %}
+              {% endif %}
+              <script type="text/javascript">
+                setTimeout(function () {
+                  // Closing the alert
+                  $('.alert').alert('close');
+                }, 5000);
+              </script>
+              <div class="mb-3 text-center">
+                <label for="username" class="form-label">Ingrese Numero de DNI</label>
+                <input type="text" class="form-control" id="username" name="dni"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  type="number" maxlength="8" required>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}UNCP 2023-I{% endblock title %}
+
+{% block content %}
+<h1>Subir Fotografia</h1>
+  <div class="col-md-8">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="fw-bold">Subir Fotografia</h2>
+      <div class="card-body">
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="" class="form-label">Nombres</label>
+            <input type="text"  name="nombres" value="{{ alumno.nombres }}" readonly>
+          </div>
+          <div class="mb-3">
+            {% if alumno.foto %}
+              <img src="{{ alumno.foto.url }}" alt="alumno" height="300" width="200">
+            {% endif %}
+            <label for="" class="form-label">Fotografia</label>
+            <input type="file" name="foto" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-warning">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+{% endblock content %}
