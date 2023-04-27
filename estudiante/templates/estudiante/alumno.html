@@ -7,6 +7,8 @@
 <h1>alumno</h1>
   {% if alumno.foto %}
     <img src="{{ alumno.foto.url }}" alt="alumno" height="300" width="200">
+  {% else %}
+    <p>No tiene fotografia</p>
   {% endif %}
   <p>{{ alumno.nombres }}, {{alumno.primer_apellido}}</p>
 
