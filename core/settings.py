@@ -116,9 +116,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #Config
 cloudinary.config(
-  cloud_name = "dnlulav1o",
-  api_key = "346666852897273",
-  api_secret = "IBG_0aqyDFU_G1kJef1zBBDe6Og",
+  cloud_name = "",
+  api_key = "",
+  api_secret = "",
   secure = True
 )
 # Default primary key field type
